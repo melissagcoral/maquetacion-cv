@@ -1,0 +1,277 @@
+/* h1 {
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Roboto Mono', monospace;
+} */
+
+/*NORMALIZACION*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*Mantiene el alto y ancho a pesar de padding y border*/
+    font-family: 'Inconsolata', monospace;
+    list-style: none; /*Quita los bullets de las listas*/
+    text-decoration: none; /*Quita el subrayado de los enlaces*/
+    color: white;
+}
+
+body {
+    background-color: black;/*TODO: borrar cuando tengamos fondo final*/
+}
+
+header {
+    position: fixed; /*HAce que el header se quede fijo en la parte sup*/
+    right: 0;
+    top: 0;
+    z-index: 100;/*Hace que el header se muestre por encima*/
+    width: 100%;
+    display: flex; /*Hace que los elementos se pongan en linea*/
+    align-items: center; /*centra verticalmente*/
+    justify-content: space-between;/*que los elementos se separen*/
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.navlist {
+    display: flex;/*para que los elementos ul se pongan inline*/
+    
+}
+
+.navlist a {
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;/*para animar las caracteristicas del .navlist a*/
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;/*subrayado que aparece cuando posamos el mouse*/
+}
+
+
+#menu-icon {
+    display: none;/*para que solo se vea cuando la pag este colapsada de forma horiz*/
+}
+
+#menu-icon {
+    font-size: 35px;
+    z-index: 101;/*para que se muestre por encima del header*/
+    cursor: pointer;/*para que se vea la manito*/
+    display: none;
+}
+
+#menu-toggle{
+    display: none;/*nunca quiero que se vea el checkbox*/
+}
+
+.menu-icon-action {
+    display: none; /*para que no se pueda hacer click*/
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%); /* fondo de color gradiente */
+    position: relative; /* Para que sea relativo al contenedor (nos permite usar top, bottom, left y right) */
+    display: grid; /* Para que el hero se pueda dividir en dos columnas */
+    grid-template-columns: 1fr 1fr; /* las 2 columnas */
+    align-items: center; /* para alinear verticalmente el hero */
+    gap: 2rem; /* haya espacio de 2 rem entre las dos columnas */
+}
+
+section{
+    padding: 0 8%;
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img{
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 5s linear; /* esto hace que la transición sea lineal */
+}
+
+.hero-img img:hover {
+    width: 450px;
+    opacity: 0.6;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.videos{
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left:  20px;
+}
+
+.hero-text a.videos i{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all 0.5s ease;
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+
+
+@media (max-width:992px){
+    section {
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text p {
+        font-size: 70%;
+    }
+
+    .icons{
+        display: none;
+    }
+
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img {
+        margin: 0;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #021719ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease-out;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    .navlist.open {
+        right: 0;
+    }
+}

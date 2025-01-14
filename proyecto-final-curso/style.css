@@ -62,6 +62,7 @@ header {
     font-size: 35px;
     z-index: 101;/*para que se muestre por encima del header*/
     cursor: pointer;/*para que se vea la manito*/
+    display: none;
 }
 
 #menu-toggle{
@@ -270,9 +271,7 @@ section{
         margin: 7px 0;
     }
 
-    #menu-toggle:checked + label.menu-icon-action + ul{
+    .navlist.open {
         right: 0;
     }
-
-
 }
